@@ -52,7 +52,7 @@ namespace Calculator
 
             public void add()
             {
-                throw new NotImplementedException();
+                
             }
 
             public void sub()
