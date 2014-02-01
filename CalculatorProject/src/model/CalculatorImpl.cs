@@ -52,7 +52,11 @@ namespace Calculator
 
             public void add()
             {
-                throw new NotImplementedException();
+                switch(this.currentOperation)
+                {
+                    case Operations.None:
+                        break;
+                }
             }
 
             public void sub()
