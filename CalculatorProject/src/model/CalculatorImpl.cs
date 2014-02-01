@@ -13,7 +13,7 @@ namespace Calculator
         {
             Add, Sub, Mult,
             Div, Not, Sqrt,
-            Mod, Reciproc, None
+            Mod, Reciproc, None, Equal
         };
 
 
@@ -25,6 +25,42 @@ namespace Calculator
 
             public event OnResult onResult;
             public event OnOperation onOperation;
+
+            private void compute(Operations operation)
+            {
+                switch(this.currentOperation)
+                {
+                    case Operations.None:
+                        this.value = Convert.ToDouble(this.currentValue);
+                        this.currentValue = "";
+                        break;
+                    case Operations.Add:
+                        this.value += Convert.ToDouble(this.currentValue);
+                        //this.currentValue = "";
+                        if (this.onResult != null)
+                            this.onResult(this.value.ToString("0.######"));
+                        break;
+                    case Operations.Equal:
+                        break;
+                }
+
+                /*
+                this.currentOperation = operation;
+                if (this.currentOperation == Operations.Equal)
+                {
+                    if (this.onResult != null)
+                        this.onResult(this.value.ToString("0.######"));
+                    this.currentOperation = Operations.None;
+                }*/
+                if (operation == Operations.Equal)
+                {
+                    if (this.onResult != null)
+                        this.onResult(this.value.ToString("0.######"));
+                } else
+                    this.currentOperation = operation;
+
+
+            }
 
             public CalculatorImpl()
             {
@@ -52,51 +88,47 @@ namespace Calculator
 
             public void add()
             {
-                switch(this.currentOperation)
-                {
-                    case Operations.None:
-                        break;
-                }
+                this.compute(Operations.Add);
             }
 
             public void sub()
             {
-                throw new NotImplementedException();
+                this.compute(Operations.Sub);
             }
 
             public void mult()
             {
-                throw new NotImplementedException();
+                this.compute(Operations.Mult);
             }
 
             public void div()
             {
-                throw new NotImplementedException();
+                this.compute(Operations.Div);
             }
 
             public void not()
             {
-                throw new NotImplementedException();
+                this.compute(Operations.Not);
             }
 
             public void sqrt()
             {
-                throw new NotImplementedException();
+                this.compute(Operations.Sqrt);
             }
 
             public void mod()
             {
-                throw new NotImplementedException();
+                this.compute(Operations.Mod);
             }
 
             public void reciproc()
             {
-                throw new NotImplementedException();
+                this.compute(Operations.Reciproc);
             }
 
             public void equal()
             {
-                throw new NotImplementedException();
+                this.compute(Operations.Equal);
             }
 
             public void delete()
@@ -109,6 +141,7 @@ namespace Calculator
             public void clearAll()
             {
                 // Delete history
+                this.value = 0;
                 this.currentValue = "";
                 if (this.onResult != null)
                     this.onResult("0");

@@ -222,7 +222,7 @@
             this.bSQRT.TabIndex = 16;
             this.bSQRT.Text = "√";
             this.bSQRT.UseVisualStyleBackColor = true;
-            this.bSQRT.Click += new System.EventHandler(this.bSQRT_Click);
+            this.bSQRT.Click += new System.EventHandler(this.sqrt);
             // 
             // bReciproc
             // 
@@ -233,7 +233,7 @@
             this.bReciproc.TabIndex = 15;
             this.bReciproc.Text = "1/x";
             this.bReciproc.UseVisualStyleBackColor = true;
-            this.bReciproc.Click += new System.EventHandler(this.bReciproc_Click);
+            this.bReciproc.Click += new System.EventHandler(this.reciproc);
             // 
             // bMod
             // 
@@ -244,7 +244,7 @@
             this.bMod.TabIndex = 14;
             this.bMod.Text = "%";
             this.bMod.UseVisualStyleBackColor = true;
-            this.bMod.Click += new System.EventHandler(this.bMod_Click);
+            this.bMod.Click += new System.EventHandler(this.mod);
             // 
             // bEqual
             // 
@@ -275,7 +275,7 @@
             this.bNot.TabIndex = 24;
             this.bNot.Text = "±";
             this.bNot.UseVisualStyleBackColor = true;
-            this.bNot.Click += new System.EventHandler(this.bNot_Click);
+            this.bNot.Click += new System.EventHandler(this.not);
             // 
             // bAdd
             // 
@@ -319,7 +319,7 @@
             this.bDiv.TabIndex = 20;
             this.bDiv.Text = "/";
             this.bDiv.UseVisualStyleBackColor = true;
-            this.bDiv.Click += new System.EventHandler(this.bDiv_Click);
+            this.bDiv.Click += new System.EventHandler(this.div);
             // 
             // lResult
             // 

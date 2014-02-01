@@ -71,27 +71,27 @@ namespace Calculator
                 this.calculator.mult();
             }
 
-            private void bDiv_Click(object sender, EventArgs e)
+            private void div(object sender, EventArgs e)
             {
                 this.calculator.div();
             }
 
-            private void bNot_Click(object sender, EventArgs e)
+            private void not(object sender, EventArgs e)
             {
                 this.calculator.not();
             }
 
-            private void bReciproc_Click(object sender, EventArgs e)
+            private void reciproc(object sender, EventArgs e)
             {
                 this.calculator.reciproc();
             }
 
-            private void bMod_Click(object sender, EventArgs e)
+            private void mod(object sender, EventArgs e)
             {
                 this.calculator.mod();
             }
 
-            private void bSQRT_Click(object sender, EventArgs e)
+            private void sqrt(object sender, EventArgs e)
             {
                 this.calculator.sqrt();
             }
