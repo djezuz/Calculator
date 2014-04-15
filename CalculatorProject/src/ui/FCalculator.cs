@@ -23,18 +23,12 @@ namespace Calculator
                 this.lResult.Text = result;
             }
 
-            private void onOperation(string operation)
-            {
-
-            }
-
             public FCalculator()
             {
                 InitializeComponent();
 
                 this.calculator = CalculatorFactory.getInstance();
                 this.calculator.onResult += this.onResult;
-                this.calculator.onOperation += this.onOperation;
 
                 this.pbResult.Controls.Add(this.lResult);
                 this.lResult.Location = new Point(12, 20);
@@ -109,6 +103,74 @@ namespace Calculator
             private void delete(object sender, EventArgs e)
             {
                 this.calculator.delete();
+            }
+
+            private void OnKeyDown(object sender, KeyEventArgs e)
+            {
+                switch(e.KeyData)
+                {
+                    case Keys.NumPad0:
+                    case Keys.D0:
+                        this.calculator.setDigit(0);
+                        break;
+                    case Keys.NumPad1:
+                    case Keys.D1:
+                        this.calculator.setDigit(1);
+                        break;
+                    case Keys.NumPad2:
+                    case Keys.D2:
+                        this.calculator.setDigit(2);
+                        break;
+                    case Keys.NumPad3:
+                    case Keys.D3:
+                        this.calculator.setDigit(3);
+                        break;
+                    case Keys.NumPad4:
+                    case Keys.D4:
+                        this.calculator.setDigit(4);
+                        break;
+                    case Keys.NumPad5:
+                    case Keys.D5:
+                        this.calculator.setDigit(5);
+                        break;
+                    case Keys.NumPad6:
+                    case Keys.D6:
+                        this.calculator.setDigit(6);
+                        break;
+                    case Keys.NumPad7:
+                    case Keys.D7:
+                        this.calculator.setDigit(7);
+                        break;
+                    case Keys.NumPad8:
+                    case Keys.D8:
+                        this.calculator.setDigit(8);
+                        break;
+                    case Keys.NumPad9:
+                    case Keys.D9:
+                        this.calculator.setDigit(9);
+                        break;
+                    case Keys.Decimal:
+                        this.calculator.setDot();
+                        break;
+                    case Keys.Add:
+                        this.calculator.add();
+                        break;
+                    case Keys.Subtract:
+                        this.calculator.sub();
+                        break;
+                    case Keys.Multiply:
+                        this.calculator.mult();
+                        break;
+                    case Keys.Divide:
+                        this.calculator.div();
+                        break;
+                    case Keys.Return:
+                        this.calculator.equal();
+                        break;
+                    case Keys.Back:
+                        this.calculator.delete();
+                        break;
+                }
             }
 
         }

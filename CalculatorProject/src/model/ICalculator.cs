@@ -8,13 +8,11 @@ namespace Calculator
 {
     namespace Model
     {
-        public delegate void OnOperation(string operation);
         public delegate void OnResult(string result);
 
         public interface ICalculator
         {
             event OnResult onResult;
-            event OnOperation onOperation;
 
             void setDigit(byte digit);
             void setDot();
